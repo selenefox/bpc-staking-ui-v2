@@ -1,0 +1,43 @@
+{
+  "name": "@bpc/rc-javascript-monorepo",
+  "workspaces": [
+    "packages/*"
+  ],
+  "description": "Typescript monorepo",
+  "repository": "",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "prestart": "yarn build",
+    "start": "run-p start:*",
+    "start:watch": "tsc --build --watch",
+    "pretest": "yarn build",
+    "build": "tsc --build",
+    "clean": "rimraf packages/*/{tsconfig.tsbuildinfo,lib,dist}"
+  },
+  "peerDependencies": {
+    "@bpc/rc-javascript-sdk": "0.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.18.6",
+    "@bpc/rc-javascript-sdk": "*",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@types/jest": "^27.4.1",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "eslint-webpack-plugin": "^2.5.2",
+    "lerna": "^3.14.1",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^2.6.3",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "babel": "^6.23.0"
+  }
+}
