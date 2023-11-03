@@ -201,19 +201,33 @@ export class Governance {
       // @ts-ignore
       result.push({
         id: returnValues.proposalId,
+        // @ts-ignore
         status: TGovernanceProposalStatus[Number(state)],
+        // @ts-ignore
         proposer: returnValues.proposer,
+        // @ts-ignore
         targets: returnValues.targets,
+        // @ts-ignore
         values: returnValues.values,
+        // @ts-ignore
         signatures: returnValues.signatures,
+        // @ts-ignore
         inputs: returnValues.calldatas,
+        // @ts-ignore
         startBlock: returnValues.startBlock,
+        // @ts-ignore
         endBlock: returnValues.endBlock,
+        // @ts-ignore
         desc: returnValues.description,
+        // @ts-ignore
         votes: proposalVotes[returnValues.proposalId] || [],
+        // @ts-ignore
         quorumRequired: bigQuorum,
+        // @ts-ignore
         totalPower: bigPower,
+        // @ts-ignore
         voteDistribution: voteDistribution,
+        // @ts-ignore
       });
     }
     console.log(JSON.stringify(result, null, 2))
