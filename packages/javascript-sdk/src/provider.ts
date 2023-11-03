@@ -201,7 +201,7 @@ export class KeyProvider implements IKeyProvider {
     return chainParams.epoch
   }
 
-  public async sendTx(sendOptions: { to: string; data?: string; value?: string; }): Promise<IPendingTx> {
+  public async sendTx(sendOptions: { to: string; data?: string; value?: string; }): Promise<unknown> {
     return await sendTransactionAsync(this.web3!, {
       from: this.accounts![0],
       to: sendOptions.to,

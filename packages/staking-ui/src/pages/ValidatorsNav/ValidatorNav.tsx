@@ -29,7 +29,6 @@ export const ValidatorsNav = observer((): ReactElement => {
     const grid = useLocalGridStore<IValidator>(async (offset: number, limit: number): Promise<[IValidatorWithAmounts[], boolean]> => {
         const validators = await store.getBasSdk().getStaking().getAllValidators();
         const chainConfig = (await store.getChainConfig()).candidateLength;
-        console.log("chainL:",chainConfig)
         const tOPAddress = await store.getBasSdk().getStaking().getActiveValidatorsAddresses();
         const totalDelegatedTokens = await store.getBasSdk().getStaking().getTotalDelegatedAmount();
         setBondedTokens(totalDelegatedTokens.toFixed(4));
@@ -59,7 +58,6 @@ export const ValidatorsNav = observer((): ReactElement => {
                 key: validator.validator,
             });
         }
-        console.log(result)
         setTotalValidators(chainConfig);
         setActiveValidators(activeCount);
         return [result, false]
