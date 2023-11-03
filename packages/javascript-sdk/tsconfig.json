@@ -1,11 +1,12 @@
 {
   "include": ["src"],
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "esModuleInterop": true,
     "composite": true,
     "outDir": "lib",
-    "rootDir": "src"
+    "rootDir": "src",
   }
 }

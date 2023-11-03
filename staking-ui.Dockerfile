@@ -2,7 +2,6 @@ FROM node:16-alpine AS build
 WORKDIR /build
 RUN apk update && apk add python3 alpine-sdk
 COPY . /build
-RUN yarn config set registry https://registry.npm.taobao.org
 RUN yarn
 RUN yarn build && cd packages/staking-ui && yarn build
 

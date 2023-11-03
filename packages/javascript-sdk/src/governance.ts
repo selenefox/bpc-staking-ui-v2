@@ -180,6 +180,7 @@ export class Governance {
       });
     }
     for (const {blockNumber, returnValues} of events) {
+
       const state = await this.keyProvider.governanceContract!.methods.state(returnValues.proposalId).call()
       const quorumRequired = await this.keyProvider.governanceContract!.methods
         .quorum(blockNumber)
@@ -197,9 +198,9 @@ export class Governance {
         }
         voteDistribution[vote.type] = voteDistribution[vote.type].plus(vote.weight);
       }
+      // @ts-ignore
       result.push({
         id: returnValues.proposalId,
-        // @ts-ignore
         status: TGovernanceProposalStatus[Number(state)],
         proposer: returnValues.proposer,
         targets: returnValues.targets,

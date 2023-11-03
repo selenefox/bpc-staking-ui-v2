@@ -33,6 +33,7 @@
         ],
         // TODO: change to error
         "jsx-a11y/click-events-have-key-events": "off",
+        "@typescript-eslint/ban-ts-ignore": "off",
         "react/no-did-update-set-state": "off",
         "react/no-children-prop": "off",
         "import/no-unresolved": "off",
@@ -42,6 +43,7 @@
         "react/jsx-no-undef": "off",
         "no-template-curly-in-string": "off",
         "prefer-template": "error",
+
         "camelcase": [
           "error"
         ],

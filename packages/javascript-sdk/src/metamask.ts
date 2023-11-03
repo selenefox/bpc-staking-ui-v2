@@ -76,7 +76,7 @@ export const sendTransactionAsync = async (
     value?: string;
     nonce?: number;
   }
-): Promise<unknown> => {
+): Promise<IPendingTx> => {
   const gasPrice = await web3.eth.getGasPrice();
   console.log('Gas Price: ' + gasPrice);
   let nonce = sendOptions.nonce;
@@ -101,13 +101,13 @@ export const sendTransactionAsync = async (
     throw new Error(`Gas estimation exceeds possible limit (${Number(gasEstimation)} > ${Number(sendOptions.gasLimit)})`);
   }
   console.log('Sending transaction via Web3: ', tx);
-  return new Promise((resolve, reject) => {
-    const promise = web3.eth.sendTransaction(tx);
-    promise.once('transactionHash', async (transactionHash: string) => {
-      console.log(`Just signed transaction has is: ${transactionHash}`);
-      const rawTx = await web3.eth.getTransaction(transactionHash);
-      console.log(`Found transaction in node: `, JSON.stringify(rawTx, null, 2),);
-      resolve({transactionHash: transactionHash, receipt: promise,});
-    }).catch(reject);
-  });
+    return new Promise((resolve, reject) => {
+      const promise = web3.eth.sendTransaction(tx);
+      promise.once('transactionHash', async (transactionHash: string) => {
+        console.log(`Just signed transaction has is: ${transactionHash}`);
+        const rawTx = await web3.eth.getTransaction(transactionHash);
+        console.log(`Found transaction in node: `, JSON.stringify(rawTx, null, 2),);
+        resolve({transactionHash: transactionHash, receipt: promise,});
+      }).catch(reject);
+    });
 }
