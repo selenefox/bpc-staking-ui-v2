@@ -34,12 +34,12 @@ export const makeDefaultConfig = (chainId: number, chainName: string, rpcUrl: st
   }
 }
 
-export const LOCAL_CONFIG: IConfig = makeDefaultConfig(16005, 'BPC-RC devnet #2', 'http://192.168.2.110:8545/','http://192.168.2.110:4000/')
-export const DEV_CONFIG: IConfig = makeDefaultConfig(16002, 'BPC-RC devnet #1', 'http://rpc.bitplanet.global:8545/', 'http://explorer.testnet.bitplanet.global:4000/')
+export const LOCAL_CONFIG: IConfig = makeDefaultConfig(1600, 'BPC-RC devnet #2', 'http://192.168.2.110:8545/','http://192.168.2.110:4000/')
+export const DEV_CONFIG: IConfig = makeDefaultConfig(16002, 'BPC-RC devnet #1', 'http://rpc.testnet.bitplanet.global:8545/', 'http://explorer.testnet.bitplanet.global:4000/')
 
 export const CONFIGS: Record<string, IConfig> = {
   "localhost": makeDefaultConfig(16005, 'BPC-RC devnet #2', 'http://192.168.2.110:8545/','http://192.168.2.110:4000/'),
-  "devnet-1": makeDefaultConfig(16002, 'BPC-RC devnet #1', 'http://rpc.bitplanet.global:8545/', 'http://explorer.testnet.bitplanet.global:4000/'),
+  "devnet-1": makeDefaultConfig(16002, 'BPC-RC devnet #1', 'http://rpc.testnet.bitplanet.global:8545/', 'http://explorer.testnet.bitplanet.global:4000/'),
 };
 
 export class BasStore {

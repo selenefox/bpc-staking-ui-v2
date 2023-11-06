@@ -24,7 +24,7 @@ if (window.location.search.length > 0) {
 console.log(`Current env is: ${currentEnvironment}`)
 
 if (currentEnvironment === 'env') {
-  config = makeDefaultConfig(Number('16002'), 'BPC Devnet', 'http://rpc.bitplanet.global:8545/', {
+  config = makeDefaultConfig(Number('16002'), 'BPC Devnet', 'http://rpc.testnet.bitplanet.global:8545/', {
     homePage: "${EXPLORER_HOME_URL}",
     txUrl: "${EXPLORER_TX_URL}",
     addressUrl: "${EXPLORER_ADDRESS_URL}",
