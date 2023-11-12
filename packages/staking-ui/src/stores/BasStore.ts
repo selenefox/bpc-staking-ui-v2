@@ -87,7 +87,7 @@ export class BasStore {
   private cachedChainConfig?: IChainConfig & IChainParams;
 
   public async getLatestChainConfig(): Promise<IChainConfig & IChainParams> {
-    if (this.cachedChainConfig) return this.cachedChainConfig;
+    // if (this.cachedChainConfig) return this.cachedChainConfig;
     return this.getChainConfig();
   }
 

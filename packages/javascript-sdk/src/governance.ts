@@ -180,12 +180,14 @@ export class Governance {
       });
     }
     for (const {blockNumber, returnValues} of events) {
-
+      console.log("block:>>>",blockNumber);
+      
       const state = await this.keyProvider.governanceContract!.methods.state(returnValues.proposalId).call()
       const quorumRequired = await this.keyProvider.governanceContract!.methods
         .quorum(blockNumber)
         .call();
       const bigQuorum = new BigNumber(quorumRequired).dividedBy(10 ** 18);
+      console.log("bigQuorum:>>>",bigQuorum)
       const bigPower = bigQuorum.multipliedBy(3).dividedBy(2);
       const voteDistribution: Record<TGovernanceVoteType, BigNumber> = {
         'AGAINST': new BigNumber('0'),
@@ -283,6 +285,8 @@ export class Governance {
     const data = this.keyProvider.governanceContract!.methods
       .execute(proposal.targets, proposal.values, proposal.inputs, keccak256(proposal.desc))
       .encodeABI();
+    console.log(proposal.targets, proposal.values, proposal.inputs, keccak256(proposal.desc))
+    console.log("data:>>",data)
     return await this.keyProvider.sendTx({
       to: this.keyProvider.governanceAddress!,
       data: data,
