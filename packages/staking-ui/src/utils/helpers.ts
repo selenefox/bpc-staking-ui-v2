@@ -5,11 +5,11 @@ import { BasStore } from "src/stores/BasStore";
 
 export const delegate = async (store: BasStore, validator: string): Promise<void> => {
   const amount = await prompt({
-    title: 'Enter delegation amount (in RC): ',
+    title: '输入委托金额 (BitPlanet: RC): ',
     rules: [
       {
         required: true,
-        message: "You must enter number of tokens"
+        message: "您必须输入令牌数量"
       }
     ],
     modalProps: {
@@ -25,18 +25,18 @@ export const delegate = async (store: BasStore, validator: string): Promise<void
     const receipt = await result.receipt;
     console.log(`Receipt: ${JSON.stringify(receipt, null, 2)}`);
 
-    message.success('Delegating was done!');
+    message.success('委托已完成!');
   } catch {
-    message.error('Delegating was failed...try again!');
+    message.error('委托失败...重试!');
   }
 }
 export const undelegate = async (store:BasStore, validator: string, defaultAmount = '0'): Promise<void> => {
   const amount = await prompt({
-    title: 'Enter undelegation amount (in RC): ',
+    title: '输入取消授权金额（BitPlanet:RC） ',
     rules: [
       {
         required: true,
-        message: "You must enter number of tokens"
+        message: "您必须输入令牌数量"
       }
     ],
     value: defaultAmount,
@@ -51,10 +51,10 @@ export const undelegate = async (store:BasStore, validator: string, defaultAmoun
     const receipt = await result.receipt;
     console.log(`Receipt: ${JSON.stringify(receipt, null, 2)}`);
 
-    message.success('Undelegating was done!');
+    message.success('取消授权已完成!');
   } catch (e) {
     console.log(e)
-    message.error('Undelegating was failed...try again!',)
+    message.error('取消委托失败...重试!',)
   }
 }
 
@@ -66,10 +66,10 @@ export const claimRewards = async (store:BasStore, validator: string): Promise<v
     const receipt = await result.receipt;
     console.log(`Receipt: ${JSON.stringify(receipt, null, 2)}`);
 
-    message.success('Claim was done!');
+    message.success('获取成功!');
   } catch (e) {
     console.log(e)
-    message.error('Claim has failed...try again!')
+    message.error('获取失败...重试!')
   }
 }
 

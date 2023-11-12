@@ -17,17 +17,17 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[]  => {
   
   return [
     {
-      title: 'Amount',
+      title: '金额',
       dataIndex: 'amount',
       key: 'amount',
     },
     {
-      title: 'Validator',
+      title: '超级节点',
       dataIndex: 'validator',
       key: 'validator',
     },
     {
-      title: 'Action',
+      title: '操作',
       render: (record: IDelegatedAssetsData) => {
         return (
           <div className="flexSpaceAround">
@@ -36,14 +36,14 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[]  => {
               type="primary" 
               onClick={async () => handleCancelDelegateClick(record)}
             >
-              Cancel
+              取消
             </Button>
             <Button
               style={{ width: '40%' }}
               type="primary" 
               onClick={async () => handleRepeatDelegateClick(record)}
             >
-              Repeat
+              重复
             </Button>
           </div>
         )

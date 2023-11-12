@@ -14,7 +14,7 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[] => {
 
   return [
     {
-      title: 'Amount',
+      title: '金额',
       dataIndex: 'amount',
       key: 'amount',
       render: (value: BigNumber) => {
@@ -22,7 +22,7 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[] => {
       }
     },
     {
-      title: 'Validator',
+      title: '超级节点',
       dataIndex: 'validator',
       key: 'validator',
       render: (value: IValidator) => {
@@ -30,7 +30,7 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[] => {
       }
     },
     {
-      title: 'Action',
+      title: '操作',
       render: (record: IStakingRewards) => {
         return (
           <div className="flexSpaceAround">
@@ -39,7 +39,7 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[] => {
               type="primary"
               onClick={async () => handleClaimRewards(record)}
             >
-              Claim&nbsp;&nbsp;&nbsp;
+              提取收益&nbsp;&nbsp;&nbsp;
             </Button>
           </div>
         )

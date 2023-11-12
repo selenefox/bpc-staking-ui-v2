@@ -36,7 +36,7 @@ export const AccountData = observer(() => {
     <div className="accountDataCArd">
       <div className="">
         <Title level={5} type='secondary'>
-          Re-Delegate Amount
+          重新委托金额
         </Title>
         {
           availableAmount.isLoading
@@ -50,7 +50,7 @@ export const AccountData = observer(() => {
       </div>
       <div>
         <Title level={5} type='secondary'>
-          Total Delegated
+          委托总金额
         </Title>
         {
           delegatedAmount.isLoading

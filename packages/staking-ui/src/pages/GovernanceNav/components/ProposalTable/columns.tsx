@@ -29,19 +29,19 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[] => {
       render: (value: string) => `${value.substr(0, 20)}...`,
     },
     {
-      title: 'Status',
+      title: '状态',
       dataIndex: 'status',
       key: 'status',
       render: renderStatus,
     },
     {
-      title: 'Quorum Required',
+      title: '所需人数',
       key: 'quorumRequired',
       dataIndex: 'quorumRequired',
       render: (value: BigNumber) => value.toFixed(0),
     },
     {
-      title: 'Voting Result',
+      title: '投票结果',
       key: 'blockNumber',
       render: (value: IGovernanceProposal) => {
         return (
@@ -56,14 +56,14 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[] => {
       }
     },
     {
-      title: 'Voting Period',
+      title: '投票有效期',
       key: 'votingPeriod',
       render: ({startBlock, endBlock}: any) => {
         return `${startBlock} -> ${endBlock}`
       }
     },
     {
-      title: 'Description',
+      title: '提案描述',
       dataIndex: 'desc',
       key: 'desc',
       render: (description: string) => description.length > 30 ? `${description.slice(0, 30)}...` : description,
@@ -81,7 +81,7 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[] => {
                   console.log(await receipt);
                 }}
               >
-                Vote For
+                投票同意
               </Button>
 
               <Button
@@ -94,7 +94,7 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[] => {
                   console.log(await receipt);
                 }}
               >
-                Vote Against
+                投票反对
               </Button>
             </Button.Group>
           )
@@ -106,7 +106,7 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[] => {
                 const {transactionHash, receipt} = await store.getBasSdk().getGovernance().executeProposal(event)
                 console.log(transactionHash)
                 console.log(await receipt)
-              }}>Execute</Button>
+              }}>执行提案</Button>
             </Button.Group>
           )
         }

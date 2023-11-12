@@ -30,7 +30,7 @@ const RegisterValidatorForm = observer((props: IGenerateThresholdKeyFormProps) =
             extra={<Typography.Text type="secondary">Validator address to register. This address will be used in the
               validator node configuration. We strictly suggest to use different validator and validator owner
               addresses.</Typography.Text>}
-            label="Validator"
+            label="节点地址"
             name="validator"
             rules={[
               {required: true, message: 'Required field'},
@@ -50,7 +50,7 @@ const RegisterValidatorForm = observer((props: IGenerateThresholdKeyFormProps) =
           <Form.Item
             extra={<Typography.Text type="secondary">Validator&apos;s initial commission rate. Value must be between 0%
               and 30%. This value can be changed in the future.</Typography.Text>}
-            label="Commission Rate"
+            label="佣金分成比例"
             name="commissionRate"
             rules={[
               {required: true, message: 'Required field'},
@@ -64,7 +64,7 @@ const RegisterValidatorForm = observer((props: IGenerateThresholdKeyFormProps) =
         <Col offset={2} span={20}>
           <Form.Item
             extra={<Typography.Text type="secondary">Initial stake amount that will be used to create validator.</Typography.Text>}
-            label="Initial Stake"
+            label="初始质押金额"
             name="initialStake"
             rules={[
               {required: true, message: 'Required field'},
@@ -89,7 +89,7 @@ const RegisterValidatorForm = observer((props: IGenerateThresholdKeyFormProps) =
           loading={props.isLoading}
           type="primary"
         >
-          Register validator
+          提交申请注册
         </Button>
       </Form.Item>
     </Form>

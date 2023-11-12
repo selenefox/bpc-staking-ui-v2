@@ -29,7 +29,7 @@ const DelegatedAssets = observer(() => {
 
   return (
     <>
-      <Typography.Title>Delegated Assets</Typography.Title>
+      <Typography.Title>委托资产</Typography.Title>
       <Table
         columns={createTableColumns(store)}
         dataSource={grid.items}
