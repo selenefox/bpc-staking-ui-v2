@@ -10,24 +10,24 @@ const {Link} = Typography;
 export const createTableColumns = (store: BasStore): ColumnProps<any>[] => {
   const columns: any[] = [
     {
-      title: 'Type',
+      title: '类型',
       dataIndex: 'type',
       key: 'type',
     },
     {
-      title: 'Amount',
+      title: '金额',
       dataIndex: 'amount',
       key: 'amount',
     },
     {
-      title: 'Validator',
+      title: '超级节点',
       dataIndex: 'validator',
       key: 'validator',
     },
   ];
   if (store.config.explorerConfig) {
     columns.push({
-      title: 'Block',
+      title: '区块号',
       render: (record: IHistoryData) => {
         const url = store.config.explorerConfig?.blockUrl.replace('{block}', `${record.event?.blockNumber || 0}`)
         return (
@@ -38,7 +38,7 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[] => {
       }
     })
     columns.push({
-      title: 'Transaction Hash',
+      title: '交易Hash',
       render: (record: IHistoryData) => {
         const url = store.config.explorerConfig?.txUrl.replace('{tx}', record.transactionHash)
         return (
