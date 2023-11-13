@@ -73,7 +73,7 @@ export const ValidatorsNav = observer((): ReactElement => {
                 <ValidatorsCard
                     active={activeValidators}
                     loading={grid.isLoading}
-                    title="节点总数"
+                    title="超级节点数/最大备选节点数"
                     total={totalValidators}
                   />
 
