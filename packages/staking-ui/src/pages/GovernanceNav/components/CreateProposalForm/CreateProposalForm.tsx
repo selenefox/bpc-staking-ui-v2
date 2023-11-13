@@ -124,7 +124,6 @@ const CreateProposalForm = observer((props: IGenerateThresholdKeyFormProps) => {
       const {blockTime} = await store.getLatestChainConfig()
       votingPeriod = `${Number(values.votingPeriod) / blockTime}`;
     }
-    console.log("votingPeriod>>:",votingPeriod)
     if (values.type === 'upgrade_runtime') {
       try {
         const a = await store.getBasSdk().getGovernance()

@@ -123,10 +123,12 @@ export class Staking {
   private async loadValidatorInfo(validator: Web3Address, epoch?: number): Promise<IValidator> {
     let status: any;
     if (epoch) {
+      console.log("ee:>>.",epoch)
       status = await this.keyProvider.stakingContract!.methods.getValidatorStatusAtEpoch(validator, epoch).call()
     } else {
       status = await this.keyProvider.stakingContract!.methods.getValidatorStatus(validator).call()
     }
+    console.log("at:",status.changedAt)
     return {
       validator: validator,
       changedAt: status.changedAt,

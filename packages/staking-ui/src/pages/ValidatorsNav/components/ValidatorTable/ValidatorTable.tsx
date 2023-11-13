@@ -14,7 +14,6 @@ export interface IValidatorTableProps {
 
 const ValidatorTable = observer((props: IValidatorTableProps) => {
   // TODO: test
-  console.log({props})
   return (
     <Table
       columns={createTableColumns(props.store)}

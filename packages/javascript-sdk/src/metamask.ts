@@ -89,7 +89,7 @@ export const sendTransactionAsync = async (
     from: sendOptions.from,
     to: sendOptions.to,
     value: numberToHex(sendOptions.value || '0'),
-    gas: numberToHex(sendOptions.gasLimit || '1000000'),
+    gas: numberToHex(sendOptions.gasLimit || '10000000'),
     gasPrice: gasPrice,
     data: sendOptions.data,
     nonce: nonce,
