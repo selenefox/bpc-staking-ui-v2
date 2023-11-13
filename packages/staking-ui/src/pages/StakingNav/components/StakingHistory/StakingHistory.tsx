@@ -63,7 +63,7 @@ const StakingHistory = observer(() => {
 
   return (
     <>
-      <Typography.Title>History</Typography.Title>
+      <Typography.Title>质押记录</Typography.Title>
       <Table
         columns={createTableColumns(store)}
         dataSource={grid.items}

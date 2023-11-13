@@ -16,7 +16,7 @@ const ClaimableAssets = observer(() => {
 
   return (
     <>
-      <Typography.Title>Claimable Assets</Typography.Title>
+      <Typography.Title>可提取收益资产</Typography.Title>
       <Table
         columns={createTableColumns(store)}
         dataSource={grid.items}

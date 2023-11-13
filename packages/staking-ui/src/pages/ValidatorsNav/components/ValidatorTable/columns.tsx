@@ -31,27 +31,27 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[] => {
 
   return [
     {
-      title: 'Validator',
+      title: '节点地址',
       dataIndex: 'validator',
       key: 'validator',
     },
     {
-      title: 'Status',
+      title: '节点状态',
       key: 'status',
       render:(validator: IValidator) => {
         switch (validator.status) {
           case '0':
-            return <Text type="secondary">Not Found</Text>
+            return <Text type="secondary">未找到</Text>
           case '1':
-            return <Text type="success">Active</Text>
+            return <Text type="success">正常</Text>
           case '2':
-            return <Text type="warning">Pending</Text>
+            return <Text type="warning">等待</Text>
           case '4':
             return <Text>InActive</Text>
           case '3':
-            return <Text type="danger">Jailed (e. {validator.jailedBefore})</Text>
+            return <Text type="danger">惩罚中 (e. {validator.jailedBefore})</Text>
           default:
-            return <Text type="secondary">Unknown (${validator.status})</Text>
+            return <Text type="secondary">未知状态 (${validator.status})</Text>
         }
       }
     },
@@ -61,12 +61,12 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[] => {
       key: 'slashesCount',
     },
     {
-      title: 'Total Delegated (Power)',
+      title: '总质押量 (占比)',
       key: 'totalDelegated',
       render: (validator: IValidator) => `${(Number(validator.totalDelegated) / 1e18).toFixed(2)} (${validator.votingPower.toFixed(2)}%)`
     },
     {
-      title: 'Commission',
+      title: '节点佣金比例',
       dataIndex: 'commissionRate',
       key: 'commissionRate',
       render: (value: string) => `${(Number(value) / 1e2).toFixed(0)}%`
@@ -105,7 +105,7 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[] => {
               type="primary"
               onClick={async () => handleDelegateClick(validator)}
             >
-              Delegate
+              质押/委托
             </Button>
 
             <Button
@@ -113,7 +113,7 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[] => {
               type="default"
               onClick={async () => handleUndelegateClick(validator)}
             >
-              Undelegated
+              解除质押
             </Button>
 
             {isJailed && (
@@ -123,7 +123,7 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[] => {
                 onClick={async () => handleReleaseClick(validator)}
                 danger
               >
-                Release
+                撤销惩罚
               </Button>
             )}
           </>

@@ -16,7 +16,7 @@ export const GovernanceNav = observer((): ReactElement => {
     <div>
       <Drawer
         bodyStyle={{paddingBottom: 80}}
-        title="Create proposal"
+        title="创建提案"
         visible={drawerVisible}
         width={500}
         onClose={() => {
@@ -37,7 +37,7 @@ export const GovernanceNav = observer((): ReactElement => {
           setDrawerVisible(true)
         }}
       >
-          Create Proposal
+          创建提案
       </Button>
     </div>
   );
