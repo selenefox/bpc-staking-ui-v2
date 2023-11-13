@@ -267,6 +267,9 @@ const CreateProposalForm = observer((props: IGenerateThresholdKeyFormProps) => {
             <Select
               placeholder="Voting peroid"
             >
+              <Select.Option value={2 * 60}>
+                3 minutes
+              </Select.Option>
               <Select.Option value={5 * 60}>
                 5 minutes
               </Select.Option>
