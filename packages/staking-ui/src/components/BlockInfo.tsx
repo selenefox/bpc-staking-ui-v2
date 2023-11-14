@@ -94,7 +94,7 @@ const BlockInfo = observer(
           </Row>
           <Row>
             <Text strong style={{marginRight: '2px'}}>节点最少质押量:</Text>
-            <Text>{blockInfo.minValidatorStakeAmount.toString(10)}</Text>
+            <Text>{blockInfo.minValidatorStakeAmount.toFixed(4)}</Text>
           </Row>
           <Row>
             <Text strong style={{marginRight: '2px'}}>用户最少质押金额:</Text>
