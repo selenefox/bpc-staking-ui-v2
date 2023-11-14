@@ -70,8 +70,8 @@ const RegisterValidatorForm = observer((props: IGenerateThresholdKeyFormProps) =
               {required: true, message: 'Required field'},
               {
                 validator: async (_, value) => {
-                  const {minStakingAmount} = await store.getLatestChainConfig();
-                  if (value < minStakingAmount) throw new Error(`Min staking amount is ${minStakingAmount}`);
+                  const {minValidatorStakeAmount} = await store.getLatestChainConfig();
+                  if (value < minValidatorStakeAmount.toFixed(4)) throw new Error(`Min staking amount is ${minValidatorStakeAmount.toFixed(4)}`);
                 }
               }
             ]}
