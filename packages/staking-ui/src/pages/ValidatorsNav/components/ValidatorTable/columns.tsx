@@ -47,7 +47,7 @@ export const createTableColumns = (store: BasStore): ColumnProps<any>[] => {
           case '2':
             return <Text type="warning">等待</Text>
           case '4':
-            return <Text>InActive</Text>
+            return <Text type="success">活跃中</Text>
           case '3':
             return <Text type="danger">惩罚中 (e. {validator.jailedBefore})</Text>
           default:
